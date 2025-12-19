@@ -2,7 +2,8 @@
 #show table.cell.where(y: 0): strong
 
 #set document(
-    title: [Music Harmony]
+    title: [Music Harmony2],
+    author: "Alessandro Bettarini"
     )
 
 #import "@preview/chordx:0.6.1": chart-chord
@@ -314,12 +315,14 @@ Mode I (major) pentatonic on each of the 12 half steps of the octave
 
 #pagebreak()
 == Chords // theory
-The notes of a chord are derived by skipping every second note of the scale.
+The notes of a chord are derived by selecting notes in thirds, that is, by skipping every second note of the scale.
 
 - *1-octave* harmony
   - triads: "root", "third", "fifth"
-  - 4-notes: "root", "third", "fifth", 7th
+  - 4-notes: "root", "third", "fifth", "seventh"
 - *2-octaves* harmony (chord extensions: 9th, 11th, 13th)
+
+*Drop 2* chords are seventh chords that are built by dropping the second highest note of a closed position chord down one octave, making that note the bass note of the chord. Example Cmaj7 is played as Cmaj7/G
 
 #line(length: 100%)
 === Superimposition
@@ -403,6 +406,33 @@ There are 4 types of guide-tone resolutions: // [1]p82
 
 ==== Enclosure
 An enclosure is a linear or melodic device in which an object note is approached by both the upper (half step above) and lower (half step below) leading tones. @coker1991 // p50
+
+#line(length: 100%)
+=== Triad pairs
+- First choose two triads that fit a particular harmony and don't have any notes in common.
+- Then create melodic lines by alternating patterns of 3 notes of the first chord, followed by 3 notes from the second chord, using inversions of the chords in any combination.
+
+Possible pairs: @jlv
+- Major/minor triad pair
+  
+  Example: *C△* and *D-*, over *B♭△(#11)*, *G7sus*, and *D-7*
+
+- Augmented/major triad pair
+
+  Example: *C+* and *D△*, over *D7(♯11)*, *F♯ø*
+
+- Major/diminished triad pair
+
+  Example: *C△* and *D#sym.degree*, over *G7(♭9)sus*, *E7alt*, and *F-(maj7)*
+
+- Major/major triad pair
+
+  Example: *C△* and *F♯△*, over *C13(♭9)*, and *G#sym.degree 7*
+
+- Diminished/minor triad pair
+
+  Example: *C#sym.degree* and *D♭-*, over *D♭-(maj7)*, and *B♭ø*
+
 
 #line(length: 100%)
 === Chord substitutions // [1]p80
