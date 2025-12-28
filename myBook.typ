@@ -2,7 +2,7 @@
 #show table.cell.where(y: 0): strong
 
 #set document(
-    title: [Music Harmony2],
+    title: [Music Harmony],
     author: "Alessandro Bettarini"
     )
 
@@ -14,7 +14,7 @@
   #title()
   by\
   Alessandro Bettarini\
-  15 December 2025
+  28 December 2025
   #rect[
     Harmony theory and applications to\
     cello and guitar
@@ -409,7 +409,8 @@ An enclosure is a linear or melodic device in which an object note is approached
 
 #line(length: 100%)
 === Triad pairs
-- First choose two triads that fit a particular harmony and don't have any notes in common.
+- First choose two triads that fit a particular harmony and don't have any notes in common 
+- To have more movement, choose two adjacecnt triads because they don't have any repeated notes (they create a hexatonic scale). @marbinTriads
 - Then create melodic lines by alternating patterns of 3 notes of the first chord, followed by 3 notes from the second chord, using inversions of the chords in any combination.
 
 Possible pairs: @jlv
@@ -543,6 +544,36 @@ Note that the accidentals establish the key independently from the clef. In the 
 
 ==== Circle of fifths <circle_anchor>
 - Interpret the previous table in a "circular" fashion, where the bottom line wraps around and joins the first line
+
+#pagebreak()
+= Application: Harmonica
+
+Here we consider the 10-hole diatonic harmonica (for example Hohner "Blues Harp" and "Marine Band"), not the chromatic harmonica.
+
+The following diagrams show the scales that can be played on the *same* harmonica, without overblows and overdraws. By also using minimal overblows and overdraws the usefulness of each position can be further expanded.
+
+Blues is typically played by a _cross_ harp with lots of overdraws and overblows, for example a harmonica labelled "C" can be used to play a blues in the key of *G* (chords G7, C7, D7).
+
+For a very skilled player who can play all the overblows and overdraws the instrument becomes fully chromatic (any position could play any mode)
+
+*Legend*:
+- the blue line shows the path the mouth should follow to play a diatonic scale without missing any note of that scale. Note the reversal of the blow/draw pattern between hole 6 and 7.
+#figure(  image("img/harp-legend.png", width: 100%))
+
+The *same* harmonica can be used in any one of 12 "positions"
+
+#pagebreak()
+== Useful positions: 12, 1..6
+- they correspond to the familiar 7 modes of the major scale
+
+  #figure(  image("img/harp1.png", width: 100%))
+
+#pagebreak()
+== Not so useful positions: 7..11
+- the root note of the scale must be played by overblowing or overdrawing as indicated
+
+  #figure(  image("img/harp2.png", width: 100%))
+
 
 #pagebreak()
 = Application: Cello
