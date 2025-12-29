@@ -39,8 +39,6 @@ Music has 3 elements:
 
 In this document we are dealing mainly with _harmony_.
 
-*Arpeggio* is a melody using the notes of a chord (harmony).
-
 == Intervals
 #table(
     columns: 4,
@@ -315,12 +313,19 @@ Mode I (major) pentatonic on each of the 12 half steps of the octave
 
 #pagebreak()
 == Chords // theory
-The notes of a chord are derived by selecting notes in thirds, that is, by skipping every second note of the scale.
 
-- *1-octave* harmony
-  - triads: "root", "third", "fifth"
-  - 4-notes: "root", "third", "fifth", "seventh"
-- *2-octaves* harmony (chord extensions: 9th, 11th, 13th)
+- *Modal* harmony
+  - Chords are built by stacking fourths
+  - In jazz to improvise a melodic line a suitable technique is the "Triad pairs" 
+
+- *Tonal* harmony
+  - The notes of a chord are derived by selecting notes in thirds, that is, by skipping every second note of the scale.
+  - The skill of the jazz melody improviser is to follow the rapid chord changes
+
+  - *1-octave* harmony
+    - triads: "root", "third", "fifth"
+    - 4-notes: "root", "third", "fifth", "seventh"
+  - *2-octaves* harmony (chord extensions: 9th, 11th, 13th)
 
 *Drop 2* chords are seventh chords that are built by dropping the second highest note of a closed position chord down one octave, making that note the bass note of the chord. Example Cmaj7 is played as Cmaj7/G
 
@@ -440,6 +445,32 @@ Possible pairs: @jlv
 The minor 5th of any dominant chord can be sustitued in place of the dominant itself. @baker // p17
 
 #line(length: 100%)
+
+#pagebreak()
+== Arpeggio
+
+An *Arpeggio* is a melody using the notes of a chord. It can be played as a sequence of thirds. A third can be either minor (min) or major (MAJ) therefore the possibilities are:
+
+- Triads, they span 1 octave
+
+  - min,min,min,min #sym.arrow.r.double diminished
+  - min,MAJ,Fourth #sym.arrow.r.double minor
+  - MAJ,min,Fourth #sym.arrow.r.double major
+  - MAJ,MAJ,MAJ #sym.arrow.r.double augmented (whole-tone)
+
+- Extended chords, span 2 octaves then they repeat. Note that in each pattern there are 3 MAJ and 4 minor intervals, they just appear in different order:
+
+  - MAJ,min,MAJ,min,MAJ,min,min #sym.arrow.r.double Lydian mode
+  - MAJ,min,MAJ,min,min,MAJ,min #sym.arrow.r.double Ionian mode
+  - MAJ,min,min,MAJ,min,MAJ,min #sym.arrow.r.double Mixolydian mode
+  - min,MAJ,min,MAJ,min,MAJ,min #sym.arrow.r.double Dorian mode
+  - min,MAJ,min,MAJ,min,min,MAJ #sym.arrow.r.double Aeolian mode
+  - min,MAJ,min,min,MAJ,min,MAJ #sym.arrow.r.double Phrygian mode
+  - min,min,MAJ,min,min,MAJ,MAJ #sym.arrow.r.double Locrian mode
+
+  The last step in each pattern above is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns. Seven are given above, the remaining 57 patterns are left as an exercise to the reader to derive. One example is:
+
+  - MAJ,min,MAJ,MAJ,min,min,min #sym.arrow.r.double (1,3,5,7,9♯,11♯,13)
 
 #pagebreak()
 == Notation
