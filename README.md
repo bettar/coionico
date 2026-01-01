@@ -17,3 +17,4 @@ If you are willing to make some changes, follow the usual path of forking and op
 - <https://www.editor.guitarscientist.com>
 - [Typst](https://typst.app/)
 - [chordx](https://typst.app/universe/package/chordx/) A package to write song lyrics with chord diagrams in Typst.
+- [luaSimpleCanvas](https://github.com/bettar/luaSimpleCanvas)

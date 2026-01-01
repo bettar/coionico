@@ -337,7 +337,7 @@ Mode I (major) pentatonic on each of the 12 half steps of the octave
 
 - *Tonal* harmony
   - The notes of a chord are derived by selecting notes in thirds, that is, by skipping every second note of the scale.
-  - The skill of the jazz melody improviser is to follow the rapid chord changes
+  - The skill of the jazz melody improviser is to follow the rapid chord changes, for example in Jazz Be-Bop.
 
   - *1-octave* harmony
     - triads: "root", "third", "fifth"
@@ -476,7 +476,7 @@ An *Arpeggio* is a melody using the notes of a chord. It can be played as a sequ
   - MAJ,MAJ,MAJ #sym.arrow.r.double augmented (whole-tone)
 
 - Extended chords, span 2 octaves then they repeat.
-    Note that in each pattern there are 3 MAJ and 4 minor intervals, they just appear in different order:
+    Note that in each pattern of the following table there are always 3 MAJ and 4 minor intervals, they just appear in different order:
 
 // To make a table referenceable, you should place it within a figure.
 #figure(
@@ -498,7 +498,7 @@ table(
     caption: "Arpeggios spanning 2 octaves"
 ) <arp2oct_theory>
 
-  The last step in each sequence of thirds above is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns. Seven are given above, the remaining 57 patterns are left as an exercise to the reader to derive. One example is:
+  The last one of the 7 step in each sequence of thirds above is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns. Seven are given above, the remaining 57 patterns are left as an exercise to the reader to derive. One example is:
 
   - MAJ,min,MAJ,MAJ,min,min,min #sym.arrow.r.double (1,3,5,7,9♯,11♯,13)
 
@@ -644,7 +644,17 @@ The left hand can be used in either of the following two "grips"
 - *minor* grip, narrow, spanning a minor third, 3 semitones, using fingers (1,2,4) or (1,3,4) depending on the key/position/string
 - *major* grip, wide, spanning a major third, 4 semitones, using fingers (1,2,4) with a stretch of the distance between finger 1 and 2 to be the same as between finger 2 and 4.
 
+== Left hand positions on the fingerboard
+
+Usually beginners put 4 sticky tape markers on the fretboard corresponding to the blue lines in the following diagram.
+
+#figure(
+  image("img/cello/cello-positions.png", width: 100%),
+  caption: [Cello left-hand positions]
+  )
+
 == Major scale pattern on fingerboard
+It is useful to look at the following diagram through a carboard cutout that lets only 4 strings at a time to be viewed, positioned according to the key.
 
 #figure(
   image("img/cello/cello-major.png", width: 100%),
