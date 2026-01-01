@@ -2,7 +2,7 @@
 #show table.cell.where(y: 0): strong
 
 #set document(
-    title: [Music Harmony],
+    title: [Patterns in Music],
     author: "Alessandro Bettarini"
     )
 
@@ -14,7 +14,7 @@
   #title()
   by\
   Alessandro Bettarini\
-  28 December 2025
+  2 January 2026
   #rect[
     Harmony theory and applications to\
     cello and guitar
@@ -109,7 +109,24 @@ The 7 modes of the major scale are (the characteristic notes of each mode are hi
     [C Mixolydian], [F major],
     [C Aeolian], [E♭ major],
     [C Locrian], [D♭ major]
+    ) 
+
+The following table shows, for example, that
+- C Phrygian is in the key of A♭ major
+- G Mixolydian is in the key of C major
+
+#figure(
+    table(columns:13,
+    fill: (x, y) => if y == 0 or x == 0 { gray.lighten(40%) },
+    [Ionian],  [C],  [.],[D], [.],[E],[F], [.],[G],[.],[A],[.],[B],
+    [Dorian],  [B♭], [.],[C], [.],[D],[E♭],[.],[F], [.],[G],[.],[A],
+    [Phrygian],[A♭], [.],[B♭],[.],[C],[D♭],[.],[E♭],[.],[F],[.],[G],
+    [Lydian],  [G],  [.],[A], [.],[B],[C], [.],[D],[.],[E],[.],[F♯],
+    [Mixolydian],[F],[.],[G], [.],[A],[B♭],[.],[C],[.],[D],[.],[E],
+    [Aeolian], [E♭], [.],[F], [.],[G],[A♭],[.],[B♭],[.],[C],[.],[D],
+    [Locrian], [D♭], [.],[E♭],[.],[F],[G♭],[.],[A♭],[.],[B♭],[.],[C]
     )
+) <modes_vs_keys>
 
 #line(length: 100%)
 === Natural Minor // scale
@@ -458,17 +475,30 @@ An *Arpeggio* is a melody using the notes of a chord. It can be played as a sequ
   - MAJ,min,Fourth #sym.arrow.r.double major
   - MAJ,MAJ,MAJ #sym.arrow.r.double augmented (whole-tone)
 
-- Extended chords, span 2 octaves then they repeat. Note that in each pattern there are 3 MAJ and 4 minor intervals, they just appear in different order:
+- Extended chords, span 2 octaves then they repeat.
+    Note that in each pattern there are 3 MAJ and 4 minor intervals, they just appear in different order:
 
-  - MAJ,min,MAJ,min,MAJ,min,min #sym.arrow.r.double Lydian mode
-  - MAJ,min,MAJ,min,min,MAJ,min #sym.arrow.r.double Ionian mode
-  - MAJ,min,min,MAJ,min,MAJ,min #sym.arrow.r.double Mixolydian mode
-  - min,MAJ,min,MAJ,min,MAJ,min #sym.arrow.r.double Dorian mode
-  - min,MAJ,min,MAJ,min,min,MAJ #sym.arrow.r.double Aeolian mode
-  - min,MAJ,min,min,MAJ,min,MAJ #sym.arrow.r.double Phrygian mode
-  - min,min,MAJ,min,min,MAJ,MAJ #sym.arrow.r.double Locrian mode
+// To make a table referenceable, you should place it within a figure.
+#figure(
+table(
+    columns: 3,
+    align: center,
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    table.header[sequence of thirds][mode][],
 
-  The last step in each pattern above is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns. Seven are given above, the remaining 57 patterns are left as an exercise to the reader to derive. One example is:
+[MAJ,min,MAJ,min,MAJ,min,min], [Lydian], [4♯],
+[MAJ,min,MAJ,min,min,MAJ,min], [Ionian], [4♮],
+[MAJ,min,min,MAJ,min,MAJ,min], [Mixolydian], [7♭],
+[min,MAJ,min,MAJ,min,MAJ,min], [Dorian], [3♭],
+[min,MAJ,min,MAJ,min,min,MAJ], [Aeolian], [6♭],
+[min,MAJ,min,min,MAJ,min,MAJ], [Phrygian], [2♭],
+[min,min,MAJ,min,min,MAJ,MAJ], [Locrian], [5♭]
+    ),
+    caption: "Arpeggios spanning 2 octaves"
+) <arp2oct_theory>
+
+  The last step in each sequence of thirds above is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns. Seven are given above, the remaining 57 patterns are left as an exercise to the reader to derive. One example is:
 
   - MAJ,min,MAJ,MAJ,min,min,min #sym.arrow.r.double (1,3,5,7,9♯,11♯,13)
 
@@ -610,29 +640,62 @@ The *same* harmonica can be used in any one of 12 "positions"
 = Application: Cello
 This section also applies to tenore guitars and modified tenor ukuleles. These are 4-string instruments tuned in fifths CGDA.
 
+The left hand can be used in either of the following two "grips"
+- *minor* grip, narrow, spanning a minor third, 3 semitones, using fingers (1,2,4) or (1,3,4) depending on the key/position/string
+- *major* grip, wide, spanning a major third, 4 semitones, using fingers (1,2,4) with a stretch of the distance between finger 1 and 2 to be the same as between finger 2 and 4.
+
 == Major scale pattern on fingerboard
 
 #figure(
-  image("img/cello-major.png", width: 100%),
+  image("img/cello/cello-major.png", width: 100%),
   caption: [Major scale patterns, all keys]
   )
 
-== Major scale and arpeggio, all keys
+== Major scale and arpeggio (triads), all keys
 
 #figure(
-  image("img/cello-arpeggio.png", width: 100%),
+  image("img/cello/cello-arp2-legend.png", width: 100%),
   caption: [Major scales and triad arpeggio, all keys]
   )
 
-== Minor scales and arpeggio, all keys
+== Minor scales and arpeggio (triads), all keys
 #figure(
-  image("img/final3a.png", width: 100%),
+  image("img/cello/final3a.png", width: 100%),
   caption: [Minor scales and triad arpeggio, keys with sharps]
   )
 
 #figure(
-  image("img/final3b.png", width: 100%),
+  image("img/cello/final3b.png", width: 100%),
   caption: [Minor scales and triad arpeggio, keys with flats]
+  )
+
+#pagebreak()
+== 7-note Arpeggio (2 octaves) // cello
+
+For the theoretical background refer to @arp2oct_theory
+
+#figure(image("img/cello/cello-arp2-legend.png")) // TODO: align left
+
+- A slanted green line represents two notes played on two adjacent strings
+- A vertical green line represents two notes played on the same strings
+
+- The following 7 patterns correspond to the 7 modes of the major scale.
+- The last pattern on the right illustrates what you would get if you continued the diagram: the Lydian mode would be used again, but the root and all the notes would be one semitone lower compared to the Lydian mode on the left.
+- all the patterns use only the minor grip, they span 4 strings, and they have the same initial and final notes. The root being the same, means that each mode belongs to a different key. @modes_vs_keys
+- the first 3 patterns on the left are "major" because the green line starts by going up
+- the next 3 patterns are "minor" because the green line starts by going down
+- the last patterns (Locrian) is "diminished" because the green line starts by going down twice.
+
+#figure(
+  image("img/cello/cello-arp2.png"),
+  caption: [2-octave arpeggio, 7 modes]
+  )
+
+Note that in the following figure the two diagrams represents exactly the same arpeggio *MAJ,min,MAJ,min,MAJ,min,min*
+
+#figure(
+  image("img/cello/cello-arp2-same.png", width:30%),
+  caption: [Equivalent notation]
   )
 
 #pagebreak()
