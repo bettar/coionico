@@ -466,7 +466,7 @@ The minor 5th of any dominant chord can be sustitued in place of the dominant it
 #pagebreak()
 == Arpeggio
 
-An *Arpeggio* is a melody using the notes of a chord. It can be played as a sequence of thirds. A third can be either minor (min) or major (MAJ) therefore the possibilities are:
+An _arpeggio_ is a melody using the notes of a chord. It can be played as a sequence of thirds. A third can be either minor (min) or major (MAJ) therefore the possibilities are:
 
 - Triads, they span 1 octave
 
@@ -664,7 +664,7 @@ It is useful to look at the following diagram through a carboard cutout that let
 == Major scale and arpeggio (triads), all keys
 
 #figure(
-  image("img/cello/cello-arp2-legend.png", width: 100%),
+  image("img/cello/cello-arpeggio.png", width: 100%),
   caption: [Major scales and triad arpeggio, all keys]
   )
 
@@ -778,6 +778,7 @@ TODO
 ==== Starting from 6#super[th] string // 3 arpeggio
 ==== Starting from 5#super[th] string // 4 arpeggio
 
+#pagebreak()
 === G major, 5 voices
 ==== Starting from 6#super[th] string // 20 arpeggio
 
@@ -791,11 +792,35 @@ TODO
 [C△9], [(1,3,5,7,9)], [#figure( image("img/p20-4.png", width: 60%))],
 [D9], [(1,3,5,♭7,9)], [#figure( image("img/p20-5.png", width: 65%))],
 [E-9], [(1,♭3,5,♭7,9)], [#figure( image("img/p20-6.png", width: 65%))],
-[F♯ø(♭9)], [1,♭3,♭5,♭7,♭9)], [#figure( image("img/p20-7.png", width: 60%))]
+[F♯ø(♭9)], [(1,♭3,♭5,♭7,♭9)], [#figure( image("img/p20-7.png", width: 60%))]
     )
 
 === Diminished scale // 17 arpeggio
+TODO
+
 === Whole-tone scale // 18 arpeggio
+TODO
+
+#pagebreak()
+=== 7-note Arpeggio (2 octaves) // guitar
+
+For the theoretical background refer to @arp2oct_theory
+
+#table(
+    columns: 5,
+    align: horizon + center,
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    [],[mode],[],[thirds],[key],
+
+[α], [Lyd],[#figure( image("img/gt/gt-arp7a.png", width: 65%))],[M m M m M m m],[D],
+[β], [Ion],[#figure( image("img/gt/gt-arp7b.png", width: 65%))],[M m M m #underline[m M] m],[G],
+[γ], [Mix],[#figure( image("img/gt/gt-arp7c.png", width: 65%))],[M m #underline[m M] m M m],[C],
+[δ], [Dor],[#figure( image("img/gt/gt-arp7d.png", width: 65%))],[#underline[m M] m M m M m],[F],
+[ε], [Aeo],[#figure( image("img/gt/gt-arp7e.png", width: 65%))],[m M m M m #underline[m M]],[B♭],
+[ζ], [Phr],[#figure( image("img/gt/gt-arp7f.png", width: 65%))],[m M m #underline[m M] m M],[E♭],
+[η], [Loc],[#figure( image("img/gt/gt-arp7g.png", width: 65%))],[m #underline[m M] m M m M],[A♭]
+    )
 
 #pagebreak()
 == Chords
