@@ -468,39 +468,116 @@ The minor 5th of any dominant chord can be sustitued in place of the dominant it
 
 An _arpeggio_ is a melody using the notes of a chord. It can be played as a sequence of thirds. A third can be either minor (min) or major (MAJ) therefore the possibilities are:
 
-- Triads, they span 1 octave
+=== Triads
+They span 1 octave
 
   - min,min,min,min #sym.arrow.r.double diminished
   - min,MAJ,Fourth #sym.arrow.r.double minor
   - MAJ,min,Fourth #sym.arrow.r.double major
   - MAJ,MAJ,MAJ #sym.arrow.r.double augmented (whole-tone)
 
-- Extended chords, span 2 octaves then they repeat.
-    Note that in each pattern of the following table there are always 3 MAJ and 4 minor intervals, they just appear in different order:
+=== Extended chords <arp2oct_theory>
+They span 2 octaves then they repeat.
+
+Notes for each pattern (sequence of 3#super[rd]s) in the following tables:
+- there are always 3 MAJ and 4 min steps, they just appear in different order.
+- There are at most 2 _consecutive_ M.
+- There are 7 steps, but the last one is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns (=Q number in the tables)
+- each step can be derived from the other 6 according to the following rule:
+    - m if the other 6 steps have 3 M
+    - M if the other 6 steps have 2 M
+
+#align(right, block[
+    #align(left, block[
+    #rect[
+        *Legend:*\
+        k: cumulative alteration\
+        m: min (minor 3#super[rd])\
+        M: MAJ (major 3#super[rd])\
+        i: index\
+        P: binary interpretation (m=0,M=1)\
+        P#sub[i+1] = RotateLeft(P#sub[i])\
+        Q#sub[i+1] = P#sub[i+1] / 2
+    ]
+    ])
+])
 
 // To make a table referenceable, you should place it within a figure.
 #figure(
 table(
-    columns: 3,
+    columns: 6,
     align: center,
     stroke: 1pt,
     fill: (_, y) => if y == 0 { gray.lighten(40%) },
-    table.header[sequence of thirds][mode][],
+    table.header[pattern][mode][k][i][P][Q],
 
-[MAJ,min,MAJ,min,MAJ,min,min], [Lydian], [4♯],
-[MAJ,min,MAJ,min,min,MAJ,min], [Ionian], [4♮],
-[MAJ,min,min,MAJ,min,MAJ,min], [Mixolydian], [7♭],
-[min,MAJ,min,MAJ,min,MAJ,min], [Dorian], [3♭],
-[min,MAJ,min,MAJ,min,min,MAJ], [Aeolian], [6♭],
-[min,MAJ,min,min,MAJ,min,MAJ], [Phrygian], [2♭],
-[min,min,MAJ,min,min,MAJ,MAJ], [Locrian], [5♭]
+[M m M m M m m], [Lydian], [♯4],[1],[84],[42],
+[M m M m m M m], [Ionian], [♮4],[3],[82],[41],
+[M m m M m M m], [Mixolydian], [♭7],[5],[74],[37],
+[m M m M m M m], [Dorian], [♭3],[7],[42],[21],
+[m M m M m m M], [Aeolian], [♭6],[2],[41],[20],
+[m M m m M m M], [Phrygian], [♭2],[4],[37],[18],
+[m m M m m M M], [Locrian], [♭5],[6],[21],[10]
     ),
-    caption: "Arpeggios spanning 2 octaves"
-) <arp2oct_theory>
+    caption: "Major modes"
+) 
 
-  The last one of the 7 step in each sequence of thirds above is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns. Seven are given above, the remaining 57 patterns are left as an exercise to the reader to derive. One example is:
+#figure(
+table(
+    columns: 5,
+    align: (center,left,center,right),
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    table.header[pattern][arpeggio][i][P][Q],
 
-  - MAJ,min,MAJ,MAJ,min,min,min #sym.arrow.r.double (1,3,5,7,9♯,11♯,13)
+[m M M m m M m],[1, ♭3, 5, 7, 9, 11, 13],[1],[50],[25],
+[m M m m M M m],[1, ♭3, 5, ♭7, ♭9, 11, 13],[5],[38],[19],
+[M M m m M m m],[1, 3, ♯5, 7, 9, ♯11, 13],[2],[100],[50],
+[M m m M M m m],[1, 3, 5, ♭7, 9, ♯11, 13],[6],[76],[28],
+[M m m M m m M],[1, 3, 5, ♭7, 9, 11, ♭13],[3],[73],[36],
+[m m M M m m M],[1, ♭3, ♭5, ♭7, 9, 11, ♭13],[7],[25],[12],
+[m m M m m M M],[1, ♭3, ♭5, ♭7, ♭9, ♭11, ♭13],[4],[19],[9]
+    ),
+    caption: "Melodic minor modes"
+)
+
+#figure(
+table(
+    columns: 5,
+    align: (center,left,center,right),
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    table.header[pattern][arpeggio][i][P][Q],
+
+[m M M m m m M],[1, ♭3, 5, 7, 9, 11, ♭13],[1],[49],[24],
+[m m M m M M m],[1, ♭3, ♭5, ♭7, ♭9, 11, 13],[5],[22],[11],
+[M M m m m M m],[1, 3, ♯5, 7, 9, 11, 13],[2],[98],[49],
+[m M m M M m m],[1, ♭3, 5, ♭7, 9, ♯11, 13],[6],[44],[22],
+[M m m m M m M],[1, 3, 5, ♭7, ♭9, 11, ♭13],[3],[69],[34],
+[M m M M m m m],[1, 3, 5, 7, ♯9, ♯11, 13],[7],[88],[44],
+[m m m M m M M],[1, ♭3, ♭5, 𝄫7, ♭9, ♭11, ♭13],[4],[11],[5]
+    ),
+    caption: "Harmonic minor modes"
+)
+
+#figure(
+table(
+    columns: 5,
+    align: (center,left,center,right),
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    table.header[pattern][arpeggio][i][P][Q],
+
+[M m M m m m M],[1, 3, 5, 7, 9, 3, 11, ♭13],[1],[81],[40],
+[m m M M m M m],[1, ♭3, ♭5, ♭7, 9, 11, 13],[5],[26],[13],
+[m M m m m M M],[1, ♭3, 5, ♭7, ♭9, ♭11, ♭13],[2],[35],[17],
+[m M M m M m m],[1, ♭3, 5, 7, 9, ♯11, 13],[6],[52],[26],
+[M m m m M M m],[1, 3, 5, ♭7, ♭9, 11, 13],[3],[70],[35],
+[M M m M m m m],[1, 3, 5, 7, ♯9, ♯11, 13],[7],[104],[52],
+[m m m M M m M],[1, ♭3, ♭5, 𝄫7, ♭9, 11, ♭13],[4],[13],[6]
+    ),
+    caption: "Harmonic major modes"
+)
 
 #pagebreak()
 == Notation
@@ -635,14 +712,13 @@ The *same* harmonica can be used in any one of 12 "positions"
 
   #figure(  image("img/harp2.png", width: 100%))
 
-
 #pagebreak()
 = Application: Cello
-This section also applies to tenore guitars and modified tenor ukuleles. These are 4-string instruments tuned in fifths CGDA.
+This section also applies to tenor guitars and modified tenor ukuleles. These are 4-string instruments tuned in fifths: CGDA.
 
-The left hand can be used in either of the following two "grips"
+In general, the left hand can be used in either of the following two "grips"
 - *minor* grip, narrow, spanning a minor third, 3 semitones, using fingers (1,2,4) or (1,3,4) depending on the key/position/string
-- *major* grip, wide, spanning a major third, 4 semitones, using fingers (1,2,4) with a stretch of the distance between finger 1 and 2 to be the same as between finger 2 and 4.
+- *major* grip, extended, spanning a major third, 4 semitones, using fingers (1,2,4) with a stretch of the distance between finger 1 and 2 to be the same as between finger 2 and 4. Finger 3 is not used.
 
 == Left hand positions on the fingerboard
 
@@ -653,6 +729,7 @@ Usually beginners put 4 sticky tape markers on the fretboard corresponding to th
   caption: [Cello left-hand positions]
   )
 
+#pagebreak()
 == Major scale pattern on fingerboard
 It is useful to look at the following diagram through a carboard cutout that lets only 4 strings at a time to be viewed, positioned according to the key.
 
@@ -684,22 +761,13 @@ It is useful to look at the following diagram through a carboard cutout that let
 
 For the theoretical background refer to @arp2oct_theory
 
-#figure(image("img/cello/cello-arp2-legend.png")) // TODO: align left
+*Legend:*
+- A slanted line represents two notes played on two adjacent strings
+- A vertical line represents two notes played on the same strings
 
-- A slanted green line represents two notes played on two adjacent strings
-- A vertical green line represents two notes played on the same strings
-
-- The following 7 patterns correspond to the 7 modes of the major scale.
-- The last pattern on the right illustrates what you would get if you continued the diagram: the Lydian mode would be used again, but the root and all the notes would be one semitone lower compared to the Lydian mode on the left.
-- all the patterns use only the minor grip, they span 4 strings, and they have the same initial and final notes. The root being the same, means that each mode belongs to a different key. @modes_vs_keys
-- the first 3 patterns on the left are "major" because the green line starts by going up
-- the next 3 patterns are "minor" because the green line starts by going down
-- the last patterns (Locrian) is "diminished" because the green line starts by going down twice.
-
-#figure(
-  image("img/cello/cello-arp2.png"),
-  caption: [2-octave arpeggio, 7 modes]
-  )
+#align(left, block[
+    #figure(image("img/cello/cello-arp2-legend.png"))
+])
 
 Note that in the following figure the two diagrams represents exactly the same arpeggio *MAJ,min,MAJ,min,MAJ,min,min*
 
@@ -707,6 +775,37 @@ Note that in the following figure the two diagrams represents exactly the same a
   image("img/cello/cello-arp2-same.png", width:30%),
   caption: [Equivalent notation]
   )
+
+=== major
+
+- The last pattern on the right illustrates what you would get if you continued the diagram: the Lydian mode would be used again, but the root and all the notes would be one semitone lower compared to the Lydian mode on the left.
+- all the patterns span 4 strings, and they have the same initial and final notes. The root being the same, means that each mode belongs to a different key. See @modes_vs_keys
+- the first 3 patterns on the left are "major" because the green line starts by going up
+- the next 3 patterns are "minor" because the green line starts by going down
+- the last patterns (Locrian) is "diminished" because the green line starts by going down twice.
+
+#figure(
+  image("img/cello/cello-arp2.png"),
+  caption: [Use only the narrow grip]
+  )
+
+#figure(
+  image("img/cello/cello-arp2-noshift.png", width:85%),
+  caption: [Alternative, without shifting position]
+  )
+
+=== melodic minor
+
+#figure(
+  image("img/cello/cello-arp2-mel-min.png", width:85%),
+  caption: [Without shifting position]
+  )
+
+=== harmonic minor
+TODO
+
+=== harmonic major
+TODO
 
 #pagebreak()
 = Application: Guitar
@@ -776,7 +875,10 @@ TODO
 
 === G major, 4 voices
 ==== Starting from 6#super[th] string // 3 arpeggio
+TODO
+
 ==== Starting from 5#super[th] string // 4 arpeggio
+TODO
 
 #pagebreak()
 === G major, 5 voices
