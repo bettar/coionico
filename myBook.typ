@@ -14,7 +14,7 @@
   #title()
   by\
   Alessandro Bettarini\
-  2 January 2026
+  3 January 2026
   #rect[
     Harmony theory and applications to\
     cello and guitar
@@ -468,7 +468,7 @@ The minor 5th of any dominant chord can be sustitued in place of the dominant it
 
 An _arpeggio_ is a melody using the notes of a chord. It can be played as a sequence of thirds. A third can be either minor (min) or major (MAJ) therefore the possibilities are:
 
-=== Triads
+=== Triads (3-notes)
 They span 1 octave
 
   - min,min,min,min #sym.arrow.r.double diminished
@@ -476,13 +476,19 @@ They span 1 octave
   - MAJ,min,Fourth #sym.arrow.r.double major
   - MAJ,MAJ,MAJ #sym.arrow.r.double augmented (whole-tone)
 
-=== Extended chords <arp2oct_theory>
-They span 2 octaves then they repeat.
+=== Seventh (4-notes)
+- (1,3,5,7) They span 1 octave
+- (3,5,7,9)
 
-Notes for each pattern (sequence of 3#super[rd]s) in the following tables:
+=== Extended (7-notes) <arp2oct_theory>
+They span 2 octaves.
+
+A _pattern_ is a sequence of steps. Each _step_ is a 3#super[rd].
+
+For each pattern in the following tables:
 - there are always 3 MAJ and 4 min steps, they just appear in different order.
 - There are at most 2 _consecutive_ M.
-- There are 7 steps, but the last one is added to reach the root note again, therefore each pattern has only 6 independent "steps", resulting in a theoretical set of 64 patterns (=Q number in the tables)
+- There are 7 steps, but the last one is added to reach the root note again, therefore each pattern has only 6 independent steps, resulting in a theoretical set of 64 patterns (=Q number in the tables). There are only 28 cases that meet these criteria, and they are all listed in the 4 tables below.
 - each step can be derived from the other 6 according to the following rule:
     - m if the other 6 steps have 3 M
     - M if the other 6 steps have 2 M
@@ -533,7 +539,7 @@ table(
 [m M M m m M m],[1, ♭3, 5, 7, 9, 11, 13],[1],[50],[25],
 [m M m m M M m],[1, ♭3, 5, ♭7, ♭9, 11, 13],[5],[38],[19],
 [M M m m M m m],[1, 3, ♯5, 7, 9, ♯11, 13],[2],[100],[50],
-[M m m M M m m],[1, 3, 5, ♭7, 9, ♯11, 13],[6],[76],[28],
+[M m m M M m m],[1, 3, 5, ♭7, 9, ♯11, 13],[6],[76],[38],
 [M m m M m m M],[1, 3, 5, ♭7, 9, 11, ♭13],[3],[73],[36],
 [m m M M m m M],[1, ♭3, ♭5, ♭7, 9, 11, ♭13],[7],[25],[12],
 [m m M m m M M],[1, ♭3, ♭5, ♭7, ♭9, ♭11, ♭13],[4],[19],[9]
@@ -568,12 +574,12 @@ table(
     fill: (_, y) => if y == 0 { gray.lighten(40%) },
     table.header[pattern][arpeggio][i][P][Q],
 
-[M m M m m m M],[1, 3, 5, 7, 9, 3, 11, ♭13],[1],[81],[40],
+[M m M m m m M],[1, 3, 5, 7, 9, 11, ♭13],[1],[81],[40],
 [m m M M m M m],[1, ♭3, ♭5, ♭7, 9, 11, 13],[5],[26],[13],
 [m M m m m M M],[1, ♭3, 5, ♭7, ♭9, ♭11, ♭13],[2],[35],[17],
 [m M M m M m m],[1, ♭3, 5, 7, 9, ♯11, 13],[6],[52],[26],
 [M m m m M M m],[1, 3, 5, ♭7, ♭9, 11, 13],[3],[70],[35],
-[M M m M m m m],[1, 3, 5, 7, ♯9, ♯11, 13],[7],[104],[52],
+[M M m M m m m],[1, 3, ♯5, 7, ♯9, ♯11, 13],[7],[104],[52],
 [m m m M M m M],[1, ♭3, ♭5, 𝄫7, ♭9, 11, ♭13],[4],[13],[6]
     ),
     caption: "Harmonic major modes"
@@ -908,20 +914,75 @@ TODO
 
 For the theoretical background refer to @arp2oct_theory
 
+==== major
 #table(
-    columns: 5,
+    columns: 4,
     align: horizon + center,
     stroke: 1pt,
     fill: (_, y) => if y == 0 { gray.lighten(40%) },
-    [],[mode],[],[thirds],[key],
+    [Q],[mode],[arpeggio],[key],
 
-[α], [Lyd],[#figure( image("img/gt/gt-arp7a.png", width: 65%))],[M m M m M m m],[D],
-[β], [Ion],[#figure( image("img/gt/gt-arp7b.png", width: 65%))],[M m M m #underline[m M] m],[G],
-[γ], [Mix],[#figure( image("img/gt/gt-arp7c.png", width: 65%))],[M m #underline[m M] m M m],[C],
-[δ], [Dor],[#figure( image("img/gt/gt-arp7d.png", width: 65%))],[#underline[m M] m M m M m],[F],
-[ε], [Aeo],[#figure( image("img/gt/gt-arp7e.png", width: 65%))],[m M m M m #underline[m M]],[B♭],
-[ζ], [Phr],[#figure( image("img/gt/gt-arp7f.png", width: 65%))],[m M m #underline[m M] m M],[E♭],
-[η], [Loc],[#figure( image("img/gt/gt-arp7g.png", width: 65%))],[m #underline[m M] m M m M],[A♭]
+[42], [Lyd],[#figure( image("img/gt/gt-arp7a.png", width: 65%))],[D],
+[41], [Ion],[#figure( image("img/gt/gt-arp7b.png", width: 65%))],[G],
+[37], [Mix],[#figure( image("img/gt/gt-arp7c.png", width: 65%))],[C],
+[21], [Dor],[#figure( image("img/gt/gt-arp7d.png", width: 65%))],[F],
+[20], [Aeo],[#figure( image("img/gt/gt-arp7e.png", width: 65%))],[B♭],
+[18], [Phr],[#figure( image("img/gt/gt-arp7f.png", width: 65%))],[E♭],
+[10], [Loc],[#figure( image("img/gt/gt-arp7g.png", width: 65%))],[A♭]
+    )
+
+#pagebreak()
+==== melodic minor
+#table(
+    columns: 2,
+    align: horizon + center,
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    [Q],[arpeggio],
+
+[25], [#figure( image("img/gt/arp7-25.png", width: 65%))],
+[19], [#figure( image("img/gt/arp7-19.png", width: 65%))],
+[50], [#figure( image("img/gt/arp7-50.png", width: 65%))],
+[38], [#figure( image("img/gt/arp7-38.png", width: 65%))],
+[36], [#figure( image("img/gt/arp7-36.png", width: 65%))],
+[12], [#figure( image("img/gt/arp7-12.png", width: 65%))],
+[9], [#figure( image("img/gt/arp7-9.png", width: 65%))]
+    )
+
+#pagebreak()
+==== harmonic minor
+#table(
+    columns: 2,
+    align: horizon + center,
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    [Q],[arpeggio],
+
+[24], [#figure( image("img/gt/arp7-24.png", width: 65%))],
+[11], [#figure( image("img/gt/arp7-11.png", width: 65%))],
+[49], [#figure( image("img/gt/arp7-49.png", width: 65%))],
+[22], [#figure( image("img/gt/arp7-22.png", width: 65%))],
+[34], [#figure( image("img/gt/arp7-34.png", width: 65%))],
+[44], [#figure( image("img/gt/arp7-44.png", width: 65%))],
+[5], [#figure( image("img/gt/arp7-5.png", width: 65%))]
+    )
+
+#pagebreak()
+==== harmonic major
+#table(
+    columns: 2,
+    align: horizon + center,
+    stroke: 1pt,
+    fill: (_, y) => if y == 0 { gray.lighten(40%) },
+    [Q],[arpeggio],
+
+[40], [#figure( image("img/gt/arp7-40.png", width: 65%))],
+[13], [#figure( image("img/gt/arp7-13.png", width: 65%))],
+[17], [#figure( image("img/gt/arp7-17.png", width: 65%))],
+[26], [#figure( image("img/gt/arp7-26.png", width: 65%))],
+[35], [#figure( image("img/gt/arp7-35.png", width: 65%))],
+[52], [#figure( image("img/gt/arp7-52.png", width: 65%))],
+[6], [#figure( image("img/gt/arp7-6.png", width: 65%))]
     )
 
 #pagebreak()
